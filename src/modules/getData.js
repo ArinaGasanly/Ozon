@@ -1,5 +1,5 @@
-const getData = () => {
-  return fetch('http://localhost:3000/goods')
+const getData = (str) => {
+  return fetch(`https://test-85fe6-default-rtdb.firebaseio.com/goods.json?${str ? `search=${str}` : ''}`)
     .then((response) => {
       return response.json()
     })
